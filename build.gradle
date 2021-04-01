@@ -14,7 +14,8 @@ def allureVersion = "2.13.8",
         restassuredVersion = "4.3.3",
         selenideVersion = "5.19.0",
         junitVersion = "5.7.1",
-        aspectjVersion = "1.9.6"
+        aspectjVersion = "1.9.6",
+        ownerVersion = "1.0.12"
 
 allure {
     version = "$allureVersion"
@@ -24,6 +25,7 @@ allure {
         version = "$allureVersion"
     }
 }
+
 dependencies {
     testImplementation (
             "org.aspectj:aspectjweaver:$aspectjVersion",
@@ -32,11 +34,17 @@ dependencies {
             "io.qameta.allure:allure-java-commons:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "com.codeborne:selenide:$selenideVersion"
+            "com.codeborne:selenide:$selenideVersion",
+            "org.aeonbits.owner:owner:$ownerVersion"
     )
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
+tasks.withType(Test) {
+    systemProperties += System.properties
+}
+
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
