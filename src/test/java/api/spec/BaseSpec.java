@@ -11,9 +11,8 @@ import static io.restassured.RestAssured.given;
 public class BaseSpec {
 	private final RequestSpecification requestSpec = given()
 			.baseUri(ConfigHelper.getBaseURL())
-			.body("giftcard_1.RecipientName=Lolik&giftcard_1.RecipientEmail=g%40gg.aa&giftcard_1.SenderName=Me&giftcard_1.SenderEmail=fg%40gg.aa&giftcard_1.Message=q&addtocart_1.EnteredQuantity=1")
+			.contentType(ContentType.URLENC)
 			.cookies(getCookiesAuthorization())
-
 			.log().uri()
 			.when();
 
