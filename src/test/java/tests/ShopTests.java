@@ -25,6 +25,7 @@ public class ShopTests extends BaseTest {
                 .body("success", is(true))
                 .and()
                 .body("message", hasToString("The product has been added to your <a href=\"/wishlist\">wishlist</a>"))
+                .contentType("application/octet-stream")
                 .log().body();
     }
 }
