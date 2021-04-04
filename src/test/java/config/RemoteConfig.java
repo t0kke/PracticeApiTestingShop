@@ -8,6 +8,9 @@ import org.aeonbits.owner.Config;
         "classpath:remote.properties"
 })
 public interface RemoteConfig extends Config {
+    @Key("web.url")
+    String webBaseUrl();
+
     @Key("web.remote.driver.user")
     String selenoidDriverUser();
 

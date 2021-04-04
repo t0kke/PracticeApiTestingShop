@@ -15,6 +15,10 @@ public class ConfigHelper {
 		return getConfig().password();
 	}
 
+	public static String getBaseUrlForDriver() {
+		return getRemoteConfig().webBaseUrl();
+	}
+
 	public static String getRemoteDriver() {
 		// https://%s:%s@selenoid.autotests.cloud/wd/hub/
 		return String.format(System.getProperty("web.remote.driver"),
