@@ -1,14 +1,18 @@
 package tests;
 
-import api.steps.Steps;
+import api.steps.ApiSteps;
+import api.steps.UISteps;
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
 public class BaseTest {
-    static Steps restAssured;
+    static ApiSteps restAssured;
+    static UISteps ui;
 
     @BeforeAll
     public static void setUp() {
-        restAssured = new Steps();
+        restAssured = new ApiSteps();
+        ui = new UISteps();
+        Configuration.baseUrl = "http://demowebshop.tricentis.com/";
     }
-
 }
