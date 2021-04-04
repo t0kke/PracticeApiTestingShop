@@ -9,7 +9,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class BaseSpec {
-	private final RequestSpecification requestSpec = given()
+	private final RequestSpecification request = given()
 			.baseUri(ConfigHelper.getBaseURL())
 			.contentType(ContentType.URLENC)
 			.cookies(getCookiesAuthorization())
@@ -19,6 +19,7 @@ public class BaseSpec {
 	public Map<String, String> getCookiesAuthorization() {
 		return
 				given()
+						.baseUri(ConfigHelper.getBaseURL())
 						.contentType(ContentType.URLENC)
 						.formParam("Email", ConfigHelper.getEmail())
 						.formParam("Password", ConfigHelper.getPassword())
@@ -35,6 +36,6 @@ public class BaseSpec {
 	}
 
 	public RequestSpecification request() {
-		return requestSpec;
+		return request;
 	}
 }
