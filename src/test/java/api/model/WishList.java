@@ -14,4 +14,7 @@ public class WishList {
 
 	@JsonProperty("message")
 	private String message;
+
+	@JsonProperty("updateflyoutcartsectionhtml")
+	private String updateflyoutcartsectionhtml;
 }
