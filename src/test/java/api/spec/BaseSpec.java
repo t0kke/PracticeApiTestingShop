@@ -6,6 +6,7 @@ import io.restassured.specification.RequestSpecification;
 
 import java.util.Map;
 
+import static api.filter.LogFilter.filters;
 import static io.restassured.RestAssured.given;
 
 public class BaseSpec {
@@ -13,6 +14,7 @@ public class BaseSpec {
 			.baseUri(ConfigHelper.getBaseURL())
 			.contentType(ContentType.URLENC)
 			.cookies(getCookiesAuthorization())
+			.filter(filters().withCustomTemplates())
 			.log().uri()
 			.when();
 
