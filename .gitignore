@@ -41,3 +41,4 @@ target/
 .todo
 *.properties
 /settings.gradle
+/lombok.config
