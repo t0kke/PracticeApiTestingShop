@@ -26,6 +26,7 @@ public class ApiSteps {
 		getWebDriver().manage().addCookie(new Cookie("Nop.customer", BaseSpec.spec().getCookiesAuthorization().get("Nop.customer")));
 		getWebDriver().manage().addCookie(new Cookie("NOPCOMMERCE.AUTH", BaseSpec.spec().getCookiesAuthorization().get("NOPCOMMERCE.AUTH")));
 		getWebDriver().manage().addCookie(new Cookie("ARRAffinity", BaseSpec.spec().getCookiesAuthorization().get("ARRAffinity")));
+		open("");
 	}
 
 }
