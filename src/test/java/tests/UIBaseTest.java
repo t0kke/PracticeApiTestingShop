@@ -10,7 +10,7 @@ import static config.ConfigHelper.isVideoOn;
 import static helpers.AttachmentsHelper.*;
 import static helpers.DriverHelpers.*;
 
-public class BaseTest {
+public class UIBaseTest {
     static ApiSteps restAssured;
     static UISteps ui;
 
