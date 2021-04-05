@@ -13,7 +13,7 @@ repositories {
 
 def allureVersion = "2.13.8",
         restassuredVersion = "4.3.3",
-        selenideVersion = "5.19.0",
+        selenideVersion = "5.20.1",
         junitVersion = "5.7.1",
         aspectjVersion = "1.9.6",
         ownerVersion = "1.0.12",

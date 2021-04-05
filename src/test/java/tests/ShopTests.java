@@ -23,6 +23,6 @@ public class ShopTests extends BaseTest {
     @DisplayName("Проверка добавления товара в список избранного через UI")
     void checkProductAdditionToWishListPopUpInUI() {
        restAssured.setCookieFileInUITest();
-       ui.addProduckAndcheckPopUpAddToWishList("50s-rockabilly-polka-dot-top-jr-plus-size");
+       ui.addProduckAndcheckPopUpAddToWishList("/50s-rockabilly-polka-dot-top-jr-plus-size");
     }
 }
